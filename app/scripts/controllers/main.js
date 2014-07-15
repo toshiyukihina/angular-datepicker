@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('angularDatepickerApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$scope', function ($scope) {
+    $scope.myText = 'Nothing selected';
+    $scope.currentDate = '';
+    $scope.updateMyText = function(date) {
+      $scope.myText = 'Selected';
+    };
+  }]);
