@@ -22,12 +22,12 @@ angular.module('angularDatepickerApp')
       var optionsObj = {};
       optionsObj.dateFormat = 'mm/dd/yy';
       optionsObj.onSelect = function(dateText, picker) {
-        $log.debug('* onSelect');
+        $log.debug('* onSelect(' + dateText + ')');
         updateModel(dateText);
         if (scope.select) {
           scope.$apply(function() {
             $log.debug('* $apply@onSelect');
-            // Invokes '$scope.updateMyText()' via select.
+            // Invokes '$scope.updateMyText()' which is contoller method via select.
             scope.select({ date: dateText });
           });
         }
